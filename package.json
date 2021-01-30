@@ -1,0 +1,63 @@
+{
+  "name": "inject-info-plugin",
+  "version": "1.0.0",
+  "description": "Webpack Plugin for inject some information in js / html",
+  "author": "余聪 <yucong@fenbi.com>",
+  "scripts": {
+    "test": "npx jest",
+    "test:watch": "npm test -- --watch",
+    "preversion": "npm test",
+    "version": "npm run changelog",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "es",
+    "types",
+    "lib"
+  ],
+  "keywords": [
+    "余聪",
+    "inject",
+    "info",
+    "plugin",
+    "inject-info-plugin"
+  ],
+  "main": "src",
+  "types": "src/index.d.ts",
+  "license": "MIT",
+  "repository": "余聪/inject-info-plugin",
+  "jest": {
+    "testMatch": [
+      "**/__test{s,}__/*.(spec|test).{t,j}s{x,}"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/jest": "^26.0.20",
+    "conventional-changelog-cli": "^2.1.1",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  },
+  "dependencies": {
+    "change-case": "^4.1.2",
+    "lodash.template": "^4.5.0"
+  }
+}
